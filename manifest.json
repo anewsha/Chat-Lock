@@ -1,15 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "ChatGPT Chat Locker",
-  "version": "1.1",
-  "description": "Lock specific ChatGPT conversations and projects with a master password.",
+  "name": "AI Chat Locker",
+  "version": "2.0",
+  "description": "Lock specific conversations on ChatGPT, Claude, Gemini, and Perplexity with a master password.",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://chatgpt.com/*"],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://www.perplexity.ai/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_end"
     }
